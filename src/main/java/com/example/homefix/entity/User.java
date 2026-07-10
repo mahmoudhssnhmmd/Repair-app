@@ -29,7 +29,29 @@ public class User {
     @Column(nullable = false)
     private String fullName;
 
+    @Column(unique = true)
+    private String nationalId;
+
     private String phone;
+
+    private String address;
+
+    private String areaOfService;
+
+    @Column(length = 2000)
+    private String skills;
+
+    @Column(length = 2000)
+    private String userSummary;
+
+    private String experience;
+
+    private Double rating;
+
+    private String balancePaymentStatus;
+
+    @Column(length = 2000)
+    private String pastWorkFeedback;
 
     private String profilePhotoUrl;
 
