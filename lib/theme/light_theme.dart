@@ -6,15 +6,18 @@ const double borderRadius = 16.0;
 const double borderWidth = 2.5;
 const double padding = 16;
 final InputBorder textFieldEnabledBorders = OutlineInputBorder(
-  borderSide: BorderSide(width: borderWidth, color: AppColors.waitingBlue),
+  borderSide: BorderSide(width: borderWidth, color: AppColors.mainColor),
   borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
 );
 final InputBorder textFieldFocusedBorders = textFieldEnabledBorders.copyWith(
-  borderSide: BorderSide(width: borderWidth, color: AppColors.approvedGreen),
+  borderSide: BorderSide(width: borderWidth, color: AppColors.accentColor),
 );
-final InputBorder textFieldErrorBorders = textFieldEnabledBorders.copyWith();
+final InputBorder textFieldErrorBorders = textFieldEnabledBorders.copyWith(
+  borderSide: BorderSide(color: Colors.red),
+);
 
 ThemeData lightTheme = ThemeData(
+  scaffoldBackgroundColor: AppColors.backGround,
   inputDecorationTheme: InputDecorationThemeData(
     border: textFieldEnabledBorders,
     enabledBorder: textFieldEnabledBorders,
@@ -31,13 +34,8 @@ ThemeData lightTheme = ThemeData(
   filledButtonTheme: FilledButtonThemeData(
     style: ButtonStyle(
       padding: WidgetStatePropertyAll(EdgeInsets.all(padding)),
-      // backgroundColor: WidgetStateProperty.resolveWith((state) {
-      //   return state.contains(WidgetState.pressed)
-      //       ? AppColors.approvedGreen
-      //       : AppColors.waitingBlue;
-      // }),
-      backgroundColor: WidgetStatePropertyAll(AppColors.waitingBlue),
-      overlayColor: WidgetStatePropertyAll(AppColors.approvedGreen),
+      backgroundColor: WidgetStatePropertyAll(AppColors.mainColor),
+      overlayColor: WidgetStatePropertyAll(AppColors.accentColor),
       shape: WidgetStatePropertyAll(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(borderRadius)),

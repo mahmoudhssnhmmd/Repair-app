@@ -12,4 +12,12 @@ class AppStyles {
       fontSize: 16,
       color: AppColors.lightHintText
   );
+  static TextStyle regular16MainTextColor = TextStyle(
+      fontSize: 16,
+      color: AppColors.lightMainText,
+  );
+  static TextStyle regular16AccentColor = TextStyle(
+    fontSize: 16,
+    color: AppColors.accentColor,
+  );
 }
